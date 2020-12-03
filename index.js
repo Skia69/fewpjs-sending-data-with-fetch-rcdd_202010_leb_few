@@ -1,24 +1,22 @@
 // Add your code here
 function submitData(name, email){
-  const object = {
-      name,
-      email
-    }
-  
+
 const options = {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
     "Accept": "application/json"
   }, 
-  body: JSON.stringify({ name,
-      email})
+  body: JSON.stringify({ 
+    name,
+    email
+  })
 };
 
 return fetch('http://localhost:3000/users', options)
   .then(response => response.json)
   .then((object) => { document.body.innerHTML = object["id"] })
-  .catch((err) => { document.body.innerHTML= err.message })
+  .catch((error) => { document.body.innerHTML= error.message })
 }
 
 
