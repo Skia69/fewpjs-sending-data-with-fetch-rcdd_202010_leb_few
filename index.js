@@ -1,8 +1,8 @@
 // Add your code here
 function submitData(name, email){
   const object = {
-      name: name,
-      email: email
+      name,
+      email
     }
   
 const options = {
