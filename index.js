@@ -1,5 +1,10 @@
 // Add your code here
-function submitData(name, email){
+const submitData = (name, email) => {
+
+const object = { 
+    name,
+    email
+  }
 
 const options = {
   method: "POST",
@@ -7,10 +12,7 @@ const options = {
     "Content-Type": "application/json",
     "Accept": "application/json"
   }, 
-  body: JSON.stringify({ 
-    name,
-    email
-  })
+  body: JSON.stringify()
 };
 
 return fetch('http://localhost:3000/users', options)
