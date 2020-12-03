@@ -19,8 +19,8 @@
 
 // return fetch("http://localhost:3000/users", dataObject)
 //   .then(response => response.json)
-//   .then(object =>  document.body.innerHTML = object["id"])
-//   .catch(error => document.body.innerHTML= error.message)
+//   .then(object => { document.body.innerHTML = object["id"])}
+//   .catch(error => { document.body.innerHTML= error.message)}
 // }
 
 
@@ -36,8 +36,13 @@ function submitData( name, email ) {
         email
       } )
     } )
-  return fetch("http://localhost:3000/users", dataObject)
-  .then(response => response.json)
-  .then(object =>  document.body.innerHTML = object["id"])
-  .catch(error => document.body.innerHTML= error.message)
+    .then( function ( response ) {
+      return response.json()
+    } )
+    .then( function ( object ) {
+      document.body.innerHTML = object[ "id" ]
+    } )
+    .catch( function ( error ) {
+      document.body.innerHTML = error.message
+    } )
 }
