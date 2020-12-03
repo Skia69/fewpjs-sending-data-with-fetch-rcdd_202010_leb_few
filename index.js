@@ -12,7 +12,6 @@ const options = {
     "Accept": "application/json"
   }, 
   body: JSON.stringify(object)
-  
 };
 
 return fetch("http://localhost:3000/users", options)
