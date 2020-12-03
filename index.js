@@ -1,6 +1,6 @@
 // Add your code here
 function submitData(name, email){
-  let p= {
+  let p = {
       name,
       email
     }
