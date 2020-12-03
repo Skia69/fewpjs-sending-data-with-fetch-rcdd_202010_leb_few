@@ -12,13 +12,13 @@ const options = {
     "Content-Type": "application/json",
     "Accept": "application/json"
   }, 
-  body: JSON.stringify()
+  body: JSON.stringify(object)
 };
 
 return fetch('http://localhost:3000/users', options)
   .then(response => response.json())
-  .then((object) => document.body.innerHTML = object["id"])
-  .catch((error) => document.body.innerHTML= error.message)
+  .then(object => document.body.innerHTML = object["id"])
+  .catch(err => document.body.innerHTML= err.message)
 }
 
 
