@@ -1,22 +1,21 @@
 // Add your code here
 function submitData(name, email){
-  let p = {
+  const object = {
       name,
       email
     }
   
-
-let dataObject = {
+const options = {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
     "Accept": "application/json"
   }, 
-  body: JSON.stringify(p)
+  body: JSON.stringify(object)
   
 };
 
-return fetch("http://localhost:3000/users", dataObject)
+return fetch("http://localhost:3000/users", options)
   .then(response => response.json)
   .then((object) => { document.body.innerHTML = object["id"] })
   .catch((err) => { document.body.innerHTML= err.message })
