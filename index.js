@@ -17,6 +17,6 @@ const options = {
 
 return fetch('http://localhost:3000/users', options)
   .then(response => response.json())
-  .then(object => document.body.innerHTML = object[id])
+  .then(object => document.body.innerHTML = object["id"])
   .catch(err => document.body.innerHTML= err.message)
 }
